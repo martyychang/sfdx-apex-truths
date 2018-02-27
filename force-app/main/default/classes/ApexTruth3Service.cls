@@ -1,4 +1,4 @@
-public class ApexTruth3Service {
+public virtual class ApexTruth3Service {
 
     private Integer counter;
     
@@ -8,7 +8,7 @@ public class ApexTruth3Service {
         this.counter = 0;
     }
 
-    public Integer countByOne() {
+    public virtual Integer countByOne() {
         return ++this.counter;
     }
 
