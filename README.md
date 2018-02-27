@@ -53,3 +53,18 @@ At the conclusion of this chain of events, we have the following.
 * **Rerun** showing `false` on the Apex Truth 1 record
 
 Run `ApexTruth1Test` to confirm these outcomes.
+
+## Truth 2
+
+> The overridden method in a subclass is always executed when invoked,
+even when the subclass instance is cast as the superclass
+
+Let's say you want to create a subclass, maybe
+to [help with Apex unit tests][1]. Regardless of the reason,
+you want to know with certainty: If the subclass instance is cast
+as the superclass, does the overridden method in the subclass still
+get executed when called?
+
+The `ApexTruth2MegaserviceTest.getName` test proves that the overridden
+method in the subclass is _always_ executed, even when the subclass instance
+is explicitly cast as the superclass.
