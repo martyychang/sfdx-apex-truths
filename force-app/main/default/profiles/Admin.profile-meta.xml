@@ -5,6 +5,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ApexTruth3Service</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TriggerInfo</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -12,6 +16,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ApexTruth1__c.IsRerun__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApexTruth3Hello__c.Message__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -28,6 +37,9 @@
         <layout>ApexTruth1__c-Apex Truth 1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ApexTruth3Hello__c-Apex Truth 3 Hello Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>LogEntry__c-Log Entry Layout</layout>
     </layoutAssignments>
     <objectPermissions>
@@ -37,6 +49,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>ApexTruth1__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>ApexTruth3Hello__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
