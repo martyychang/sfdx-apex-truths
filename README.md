@@ -61,7 +61,7 @@ even when the subclass instance is cast as the superclass
 
 Let's say you want to create a subclass, maybe
 to [help with Apex unit tests][1]. Regardless of the reason,
-you want to know with certainty: When the subclass instance is cast
+you want to know with certainty: If the subclass instance is cast
 as the superclass, does the overridden method in the subclass still
 get executed when called?
 
