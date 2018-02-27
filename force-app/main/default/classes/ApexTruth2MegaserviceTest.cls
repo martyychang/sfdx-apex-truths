@@ -10,15 +10,23 @@ private class ApexTruth2MegaserviceTest {
     private static void getName() {
 
         // Given
-        ApexTruth2Megaservice apexTruth2 = new ApexTruth2Megaservice();
+        ApexTruth2Megaservice apexTruth2Mega = new ApexTruth2Megaservice();
 
-        System.assertEquals('ApexTruth2Megaservice', apexTruth2.getName(),
-                '`name` property as `ApexTruth2Megaservice` instance');
+        System.assertEquals(
+                'ApexTruth2Service',
+                new ApexTruth2Service().getName(),
+                '`name` property of `ApexTruth2Service` instance');
+
+        System.assertEquals(
+                'ApexTruth2Megaservice',
+                apexTruth2Mega.getName(),
+                '`name` property of `ApexTruth2Megaservice` instance');
 
         // When
         Test.startTest();
 
-        String name = ((ApexTruth2Service)apexTruth2).getName();
+        ApexTruth2Service apexTruth2 = (ApexTruth2Service)apexTruth2Mega;
+        String name = apexTruth2.getName();
 
         // Then
         Test.stopTest();
@@ -28,7 +36,9 @@ private class ApexTruth2MegaserviceTest {
         System.assertEquals('ApexTruth2Megaservice', name,
                 '`name` property after casting instance as `ApexTruth2Service`');
         
-        System.assertEquals('Megaservice says hello', apexTruth2.getMessage(),
+        System.assertEquals(
+                'Megaservice says hello',
+                apexTruth2Mega.getMessage(),
                 '`message` property on original instance');
     }
 }
