@@ -68,3 +68,23 @@ get executed when called?
 The `ApexTruth2MegaserviceTest.getName` test proves that the overridden
 method in the subclass is _always_ executed, even when the subclass instance
 is explicitly cast as the superclass.
+
+## Truth 3
+
+> Static variables persist throughout the execution of an Apex test method,
+even in the resolution of asynchronous platform event triggers
+
+If you're using static variables to hold service registries or other mutable
+data that you expect to persist within a single Apex transaction, you will
+want to know for sure how these static variables can be set and staged
+for Apex tests.
+
+`ApexTruth3HelloTriggerTest` and `ApexTruth3HelloEventTriggerTest` together
+prove that static variables persist before and after the point when
+either `Test.startTest()` _or_ `Test.stopTest()` is called. Furthermore,
+even though the platform event trigger executes in a special asynchronous
+context as [**Automated Process**][2], the static variable still persists
+such that any interactions with the static variable made
+by **Automated Process** can be validated after `Test.stopTest()`.
+
+[2]: https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_subscribe_apex.htm
